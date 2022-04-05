@@ -19,6 +19,6 @@ jobs:
         with:
           username: whoan
           password: "${{ secrets.GITHUB_TOKEN }}"
-          image_tag: ${{ env.GITHUB_REF_NAME }}, ${{ env.GITHUB_SHA }}
+          image_tag: "${GITHUB_REF_NAME},${GITHUB_SHA}"
           registry: ghcr.io
           image_name: nkitsaini/x11base
