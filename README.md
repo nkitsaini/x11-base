@@ -1,0 +1,6 @@
+# x11-base
+Docker image for x11docker environment
+- Uses ubuntu as base.  
+- Comes preinstalled with rust/npm/python.  
+- Common tools like: fish/ncdu/dust/rg/ssh/alacritty etc.  
+- With an user named `future_user` with uid:gid as 1000:1000. (you'll prob need to rename/ change dir of this user to your preference).
