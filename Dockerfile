@@ -21,7 +21,13 @@ COPY ./heavy/requirements.txt /tmp/heavy
 RUN sudo pip3 install -r /tmp/heavy/requirements.txt
 
 
-RUN useradd -ms /bin/bash future_user && echo "future_user:future_user" | chpasswd && adduser future_user sudo
+RUN useradd -ms /bin/bash future_user && echo "future_user:future_user" | chpasswd && adduser future_user sudo \
+	&& sed -i 's/future_user/1000/g' /etc/subuid /etc/subgid
+
+COPY ./configs/containers.conf /etc/containers/containers.conf
+RUN mkdir -p /run/user/1000 \
+	&& chown -R 1000:1000 /run/user/1000
+
 
 USER future_user
 RUN wget --https-only --secure-protocol=TLSv1_2 -O- https://sh.rustup.rs | sh /dev/stdin -y
