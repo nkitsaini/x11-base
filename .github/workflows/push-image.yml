@@ -17,8 +17,8 @@ jobs:
       - name: Build And Push
         uses: whoan/docker-build-with-cache-action@v5
         with:
-          username: whoan
+          username: ${{ github.actor }}
           password: "${{ secrets.GITHUB_TOKEN }}"
-          image_tag: $GITHUB_REF_NAME,$GITHUB_SHA
+          image_tag: ${{ github.sha }},${{ github.ref_name }}
           registry: ghcr.io
-          image_name: nkitsaini/x11base
+          image_name: x11base
