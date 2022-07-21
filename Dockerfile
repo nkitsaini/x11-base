@@ -5,7 +5,7 @@ RUN rm -f /etc/apt/apt.conf.d/docker-clean; echo 'Binary::apt::APT::Keep-Downloa
 
 RUN sh -c "echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selections" && \
 	echo "resolvconf resolvconf/linkify-resolvconf boolean false" | debconf-set-selections && \
-	apt-get update && yes | unminimize
+	apt-get update && yes |unminimize
 
 RUN mkdir -p /tmp/heavy/
 WORKDIR /tmp/
@@ -34,3 +34,4 @@ RUN wget --https-only --secure-protocol=TLSv1_2 -O- https://sh.rustup.rs | sh /d
 
 COPY ./heavy/cargo_installs.sh /tmp/heavy
 RUN bash /tmp/heavy/cargo_installs.sh
+USER future_user

@@ -4,7 +4,7 @@ set -e
 #echo "" | sudo tee /etc/apt/sources.list.d/jp.list
 sudo apt -y update
 ####### fish
-sudo sudo apt-add-repository ppa:fish-shell/release-3
+sudo sudo apt-add-repository -y ppa:fish-shell/release-3
 
 
 sudo apt-get update
@@ -121,3 +121,9 @@ sudo chmod 755 /usr/bin/rclone
 sudo mkdir -p /usr/local/share/man/man1
 sudo cp rclone.1 /usr/local/share/man/man1/
 sudo mandb
+
+wget -O- https://updates.signal.org/desktop/apt/keys.asc | gpg --dearmor > signal-desktop-keyring.gpg
+cat signal-desktop-keyring.gpg | sudo tee -a /usr/share/keyrings/signal-desktop-keyring.gpg > /dev/null
+echo 'deb [arch=amd64 signed-by=/usr/share/keyrings/signal-desktop-keyring.gpg] https://updates.signal.org/desktop/apt xenial main' | sudo tee -a /etc/apt/sources.list.d/signal-xenial.list
+sudo apt update && sudo apt install -y signal-desktop
+
