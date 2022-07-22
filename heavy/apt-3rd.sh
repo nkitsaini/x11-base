@@ -106,9 +106,11 @@ EOL
 apt update
 apt install -y chromium
 
+# Node/NPM
 curl -fsSL https://deb.nodesource.com/setup_16.x | bash - && sudo apt-get install -y nodejs
 
 
+# Rclone
 cd /tmp
 curl -O https://downloads.rclone.org/rclone-current-linux-amd64.zip
 unzip rclone-current-linux-amd64.zip
@@ -122,8 +124,14 @@ sudo mkdir -p /usr/local/share/man/man1
 sudo cp rclone.1 /usr/local/share/man/man1/
 sudo mandb
 
+# Signal
 wget -O- https://updates.signal.org/desktop/apt/keys.asc | gpg --dearmor > signal-desktop-keyring.gpg
 cat signal-desktop-keyring.gpg | sudo tee -a /usr/share/keyrings/signal-desktop-keyring.gpg > /dev/null
 echo 'deb [arch=amd64 signed-by=/usr/share/keyrings/signal-desktop-keyring.gpg] https://updates.signal.org/desktop/apt xenial main' | sudo tee -a /etc/apt/sources.list.d/signal-xenial.list
 sudo apt update && sudo apt install -y signal-desktop
 
+
+# Obsidian
+TAG=$(curl -Ls -o /dev/null -w %{url_effective} https://github.com/obsidianmd/obsidian-releases/releases/latest | sed 's/.*\///g' | sed 's/v//g') # 0.15.6
+wget https://github.com/obsidianmd/obsidian-releases/releases/download/v${TAG}/obsidian_${TAG}_amd64.deb -O /tmp/obsidian.deb --progress=dot:mega
+sudo apt-get -y install /tmp/obsidian.deb
