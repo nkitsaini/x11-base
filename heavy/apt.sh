@@ -12,7 +12,7 @@ apt install -y sudo
 sudo apt install -y -q git                                tmux p7zip vlc python3-pip python3-venv curl xournal \
 	 unrar i3 xdotool nautilus terminator baobab git-cola xbindkeys sqlitebrowser \
 	redshift sshuttle mosh gimp zfsutils-linux remmina aircrack-ng xclip neovim fswebcam shotwell \
-	net-tools wireguard iproute2 iputils-ping firefox fzf i3blocks sudo pulseaudio resolvconf docker.io \
+	net-tools wireguard iproute2 iputils-ping fzf i3blocks sudo pulseaudio resolvconf docker.io \
 	docker-compose socat ffmpeg jq tree mosh cmake pkg-config libfreetype6-dev \
 	libfontconfig1-dev libxcb-xfixes0-dev \
 	libxkbcommon-dev python3 libiw-dev tldr python3-tk recordmydesktop libnotify-bin \

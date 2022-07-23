@@ -135,3 +135,18 @@ sudo apt update && sudo apt install -y signal-desktop
 TAG=$(curl -Ls -o /dev/null -w %{url_effective} https://github.com/obsidianmd/obsidian-releases/releases/latest | sed 's/.*\///g' | sed 's/v//g') # 0.15.6
 wget https://github.com/obsidianmd/obsidian-releases/releases/download/v${TAG}/obsidian_${TAG}_amd64.deb -O /tmp/obsidian.deb --progress=dot:mega
 sudo apt-get -y install /tmp/obsidian.deb
+
+
+# Firefox
+sudo apt remove -y firefox
+sudo add-apt-repository -y ppa:mozillateam/ppa
+sudo apt install -y -t 'o=LP-PPA-mozillateam' firefox
+
+sudo tee - a /etc/apt/preferences.d/mozillateamppa.pref > /dev/null <<EOL
+
+Package: firefox*
+Pin: release o=LP-PPA-mozillateam
+Pin-Priority: 501
+
+EOL
+
