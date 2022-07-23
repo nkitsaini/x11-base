@@ -24,7 +24,7 @@ sudo apt install -y -q git                                tmux p7zip vlc python3
 	software-properties-common xserver-xephyr zip qbittorrent lld bsdmainutils fonts-firacode fonts-noto-extra \
 	restic maim dbus-x11 command-not-found crun python-is-python3 ncdu iperf apt-file traceroute aria2 nethogs  \
 	gcc make libc6-dev libjpeg8-dev libx11-dev x11proto-core-dev libxext-dev libxtst-dev libxdamage-dev libxfixes-dev libxrandr-dev \
-	libxinerama-dev libxss-dev zlib1g-dev libssl-dev libavahi-client-dev linux-libc-dev x11vnc xvfb libssl1.1 trash-cli \
+	libxinerama-dev libxss-dev zlib1g-dev libssl-dev libavahi-client-dev linux-libc-dev x11vnc xvfb libssl3 trash-cli \
 	build-essential                                    libcairo2-dev libjpeg-turbo8-dev libpng-dev libtool-bin libossp-uuid-dev libvncserver-dev freerdp2-dev libssh2-1-dev \
 	libtelnet-dev libwebsockets-dev libpulse-dev libvorbis-dev libwebp-dev libssl-dev libpango1.0-dev libswscale-dev libavcodec-dev \
 	libavutil-dev libavformat-dev wget tomcat9 tomcat9-admin tomcat9-common tomcat9-user \
