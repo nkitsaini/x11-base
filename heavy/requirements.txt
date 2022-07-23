@@ -1,5 +1,6 @@
 wheel
 youtube-dl
+yt-dlp
 requests
 i3ipc
 pyquery
