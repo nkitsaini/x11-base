@@ -4,7 +4,7 @@
 # Cache sudo password to avoid interactivity
 
 set -e
-echo "think" | sudo -S echo 3 && reflector --ipv4 -p "http,https" -n 5 -f 5 -c 'india' --sort rate | sudo tee /etc/pacman.d/mirrorlist
+echo "think" | sudo -S echo 3 && reflector --ipv4 -p "http,https" -n 5 -f 5 -c 'india,' --sort rate | sudo tee /etc/pacman.d/mirrorlist
 
 echo "think" | yay -Syyu --noconfirm --sudoflags "-S"
 

@@ -3,7 +3,7 @@ FROM docker.io/library/archlinux:latest
 
 # Pacman Init + mirror setup + yay installation
 RUN pacman -Syu --noconfirm && pacman-key --init \
-	&& pacman -S --noconfirm reflector && reflector --ipv4 -p "http,https" -n 5 -f 5 -c 'india' --sort rate > /etc/pacman.d/mirrorlist \
+	&& pacman -S --noconfirm reflector && reflector --ipv4 -p "http,https" -f 5 -c 'india,' --sort rate > /etc/pacman.d/mirrorlist \
 	&& pacman -S --noconfirm git sudo base-devel go \
 	&& useradd -ms /bin/bash -G wheel -p paV6FM/UE91/I future_user \
 	&& echo "%wheel   ALL=(ALL)   ALL" >>  /etc/sudoers \
