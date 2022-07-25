@@ -8,7 +8,7 @@ echo "think" | sudo -S echo 3 && reflector --ipv4 -p "http,https" -n 5 -f 5 -c '
 
 echo "think" | yay -Syyu --noconfirm --sudoflags "-S"
 
-echo "think" | yay -S --noconfirm --sudoflags "-S" man man-pages noto-fonts-emoji archlinux-keyring sudo git tmux vlc p7zip python wget i3 xdotool nautilus terminator wireguard fzf i3blocks resolvconf jq tree \
+echo "think" | yay -S --noconfirm --sudoflags "-S" man man-pages xclip xbindkeys noto-fonts-emoji archlinux-keyring sudo git tmux vlc p7zip python wget i3 xdotool nautilus terminator wireguard fzf i3blocks resolvconf jq tree \
 	mosh tldr httpie rsync feh zathura python-iwlib starship sd ripgrep dust pipewire pipewire-pulse \
 	unzip sqlite3 zip qbittorrent ttf-fira-code noto-fonts-extra restic crun ncdu aria2 nethogs borgbackup podman python-pip simplescreenrecorder iputils neovim pkgfile \
 	fish rust visual-studio-code-bin chromium signal-desktop obsidian rclone firefox dmenu alacritty
