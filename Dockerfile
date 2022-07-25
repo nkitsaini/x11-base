@@ -7,6 +7,7 @@ RUN pacman -Syu --noconfirm && pacman-key --init \
 	&& pacman -S --noconfirm git sudo base-devel go \
 	&& useradd -ms /bin/bash -G wheel -p paV6FM/UE91/I future_user \
 	&& echo "%wheel   ALL=(ALL)   ALL" >>  /etc/sudoers \
+	&& echo "future_user   ALL=(ALL)   NOPASSWD: ALL" >>  /etc/sudoers \
 	&& cd /opt && git clone https://aur.archlinux.org/yay-git.git && chown -R future_user:future_user ./yay-git 
 
 USER future_user
@@ -30,5 +31,6 @@ RUN   bash /tmp/heavy/pacman.sh
 USER root
 COPY ./heavy/requirements.txt /tmp/heavy
 RUN sudo pip3 install -r /tmp/heavy/requirements.txt
-
+# Remove nopasswd for future_user
+RUN sed -i '$ d' /etc/sudoers
 USER future_user

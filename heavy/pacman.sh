@@ -4,19 +4,16 @@
 # Cache sudo password to avoid interactivity
 
 set -e
-function set_sudo() {
-	echo 'think' | sudo -S true
-}
-set_sudo && reflector --ipv4 -p "http,https" -n 5 -f 5 -c 'india,' --sort rate | sudo tee /etc/pacman.d/mirrorlist
-set_sudo && yay -Syyu --noconfirm
+reflector --ipv4 -p "http,https" -n 5 -f 5 -c 'india,' --sort rate | sudo tee /etc/pacman.d/mirrorlist
+yay -Syyu --noconfirm
 
 # Reset pacman config to include manpages and other helpers
-set_sudo && yay -S --noconfirm pacman
+yay -S --noconfirm pacman
 cd /
-set_sudo && sudo tar xf /var/cache/pacman/pkg/pacman-*x86_64.pkg.tar.zst etc/pacman.conf
+sudo tar xf /var/cache/pacman/pkg/pacman-*x86_64.pkg.tar.zst etc/pacman.conf
 
 # Install all packages
-set_sudo && yay -S --noconfirm man man-pages xclip xbindkeys noto-fonts-emoji archlinux-keyring sudo git tmux vlc p7zip python wget git i3 xdotool nautilus terminator wireguard fzf i3blocks resolvconf jq tree \
+yay -S --noconfirm man man-pages xclip xbindkeys noto-fonts-emoji archlinux-keyring sudo git tmux vlc p7zip python wget git i3 xdotool nautilus terminator wireguard fzf i3blocks resolvconf jq tree \
 	mosh tldr httpie rsync feh zathura python-iwlib starship sd ripgrep dust pipewire pipewire-pulse \
 	unzip sqlite3 zip qbittorrent ttf-fira-code noto-fonts-extra restic crun ncdu aria2 nethogs borgbackup podman python-pip simplescreenrecorder iputils neovim pkgfile \
 	fish rust visual-studio-code-bin chromium signal-desktop obsidian rclone firefox dmenu alacritty
