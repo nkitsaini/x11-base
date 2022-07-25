@@ -4,7 +4,9 @@
 # Cache sudo password to avoid interactivity
 
 set -e
-alias set_sudo="echo 'think' | sudo -S true"
+function set_sudo() {
+	echo 'think' | sudo -S true
+}
 set_sudo && reflector --ipv4 -p "http,https" -n 5 -f 5 -c 'india,' --sort rate | sudo tee /etc/pacman.d/mirrorlist
 set_sudo && yay -Syyu --noconfirm
 
