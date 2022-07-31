@@ -2,6 +2,11 @@
 
 # Should run this file as the user itself
 # Cache sudo password to avoid interactivity
+#TODO: find a better place to put this
+### LOCALE
+echo "en_US.UTF-8 UTF-8" | sudo tee -a /etc/locale.gen
+sudo locale-gen
+###
 
 set -e
 reflector --ipv4 -p "http,https" -n 5 -f 5 -c 'india,' --sort rate | sudo tee /etc/pacman.d/mirrorlist
