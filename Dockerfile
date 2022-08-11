@@ -9,7 +9,7 @@ RUN pacman -Syu --noconfirm && pacman-key --init \
 	&& echo "%wheel   ALL=(ALL)   ALL" >>  /etc/sudoers \
 	&& echo "future_user   ALL=(ALL)   NOPASSWD: ALL" >>  /etc/sudoers \
 	&& cd /opt && git clone https://aur.archlinux.org/yay-git.git && chown -R future_user:future_user ./yay-git  \
-	&& echo "ran on 22-07-31"
+	&& echo "ran on 22-08-11"
 
 USER future_user
 RUN cd /opt/yay-git && makepkg -s
