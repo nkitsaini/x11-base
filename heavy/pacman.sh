@@ -18,7 +18,7 @@ cd /
 sudo tar xf /var/cache/pacman/pkg/pacman-*x86_64.pkg.tar.zst etc/pacman.conf
 
 # Install all packages
-yay -S --noconfirm sway xorg-xwayland github-cli bumblebee-status man nodejs npm man-pages xclip xbindkeys noto-fonts-emoji archlinux-keyring sudo git tmux vlc p7zip python wget git i3 xdotool nautilus terminator wireguard fzf i3blocks resolvconf jq tree \
+yay -S --noconfirm sway xorg-xwayland qt5-wayland github-cli bumblebee-status man nodejs npm man-pages xclip xbindkeys noto-fonts-emoji archlinux-keyring sudo git tmux vlc p7zip python wget git i3 xdotool nautilus terminator fzf i3blocks resolvconf jq tree \
 	mosh tldr httpie rsync feh zathura python-iwlib starship sd ripgrep dust pipewire pipewire-pulse \
 	unzip sqlite3 zip qbittorrent ttf-fira-code noto-fonts-extra restic crun ncdu aria2 nethogs borgbackup podman python-pip simplescreenrecorder iputils neovim pkgfile \
 	fish rust visual-studio-code-bin chromium signal-desktop obsidian rclone firefox dmenu alacritty
