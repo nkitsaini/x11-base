@@ -1,5 +1,6 @@
 # syntax = docker/dockerfile:1.3
-FROM docker.io/library/archlinux:latest
+FROM docker.io/library/archlinux:base-20220807.0.72894
+
 
 # Pacman Init + mirror setup + yay installation
 RUN pacman -Syu --noconfirm && pacman-key --init \
