@@ -1,5 +1,5 @@
 # syntax = docker/dockerfile:1.3
-FROM docker.io/library/archlinux:base-20220807.0.72894
+FROM docker.io/library/archlinux:base-20220814.0.74430
 
 
 # Pacman Init + mirror setup + yay installation
