@@ -1,16 +1,8 @@
 wheel
-youtube-dl
 yt-dlp
 requests
-i3ipc
-pyquery
 pytz
-dataset
-pyotp
-argcomplete
 tqdm
-plumbum
-pulsectl
 pygit2
 watchgod
 httpx
@@ -18,13 +10,8 @@ arrow
 fastapi
 uvicorn
 
-#i3pystatus
-psutil
-netifaces
-colour
-basiciw
 poetry
-xonsh
 supervisor
 pdbpp
+pdm
 yapf

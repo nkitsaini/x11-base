@@ -4,24 +4,24 @@
 # Cache sudo password to avoid interactivity
 #TODO: find a better place to put this
 ### LOCALE
-echo "en_US.UTF-8 UTF-8" | sudo tee -a /etc/locale.gen
-sudo locale-gen
+#echo "en_US.UTF-8 UTF-8" | sudo tee -a /etc/locale.gen
+#sudo locale-gen
 ###
 
 set -e
-reflector --ipv4 -p "http,https" -n 5 -f 5 -c 'india,' --sort rate | sudo tee /etc/pacman.d/mirrorlist
-yay -Syyu --noconfirm
+#reflector --ipv4 -p "http,https" -n 5 -f 5 --sort rate | sudo tee /etc/pacman.d/mirrorlist
+#yay -Syyu --noconfirm
 
 # Reset pacman config to include manpages and other helpers
-yay -S --noconfirm pacman
-cd /
-sudo tar xf /var/cache/pacman/pkg/pacman-*x86_64.pkg.tar.zst etc/pacman.conf
+#yay -S --noconfirm pacman
+#cd /
+#sudo tar xf /var/cache/pacman/pkg/pacman-*x86_64.pkg.tar.zst etc/pacman.conf
 
 # Install all packages
 yay -S --noconfirm sway wireguard-tools xorg-xwayland qt5-wayland github-cli bumblebee-status man nodejs npm man-pages xclip xbindkeys noto-fonts-emoji archlinux-keyring sudo git tmux vlc p7zip python wget git i3 xdotool dolphin tokei konsole breeze okular bind-tools fzf i3blocks resolvconf jq tree \
 	mosh tldr httpie zathura-pdf-mupdf rsync feh zathura python-iwlib starship sd ripgrep dust pipewire pipewire-pulse \
 	unzip sqlite3 zip qbittorrent ttf-fira-code noto-fonts-extra restic crun ncdu aria2 nethogs borgbackup podman python-pip simplescreenrecorder iputils vim neovim pkgfile \
-	fish rust visual-studio-code-bin chromium signal-desktop obsidian rclone firefox dmenu alacritty
+	fish rustup visual-studio-code-bin chromium obsidian rclone firefox dmenu alacritty pypy3 kopia
 
 ######## rust
 ##curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
